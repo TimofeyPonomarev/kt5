@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .car-container {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(0, -50%);
+      animation: moveCar 2s linear infinite;
+    }
+
+    .car {
+      width: 200px;
+      height: 100px;
+      background-color: #3498db;
+      position: relative;
+    }
+
+    .car::before,
+    .car::after {
+      content: "";
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background-color: #e74c3c;
+      border-radius: 50%;
+      top: 60px;
+    }
+
+    .car::before {
+      left: 30px;
+    }
+
+    .car::after {
+      right: 30px;
+    }
+
+    @keyframes moveCar {
+      0% {
+        transform: translate(0, -50%);
+      }
+      100% {
+        transform: translate(calc(100vw - 250px), -50%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="car-container">
+    <div class="car"></div>
+  </div>
+</body>
+</html>
